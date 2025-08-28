@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Task Management</h1>
+        <div style="margin-bottom: 20px;">
+            <a href="{{ url_for('index') }}">Home</a> |
+            <a href="{{ url_for('view_tasks') }}">View Tasks</a> |
+            <a href="{{ url_for('add_task') }}">Add Task</a> |
+            <a href="{{ url_for('sort_by_priority') }}">Sort by Priority</a> |
+            <a href="{{ url_for('sort_by_deadline') }}">Sort by Deadline</a>
+
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer style="margin-top: 30px; font-size: 14px; color: gray;">
+        <p>&copy; {{ 2025 }} Task Management App</p>
+        <p>Developed by <strong>[Gowtham]</strong></p>
+    </footer>
+</body>
+</html>

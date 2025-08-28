@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Delete Task</h2>
+<p>Are you sure you want to delete this task?</p>
+<p><strong>{{ task[1] }}</strong> (Deadline: {{ task[3] }})</p>
+<form method="POST">
+    <button type="submit">Yes, Delete</button>
+    <a href="{{ url_for('view_tasks') }}">Cancel</a>
+</form>
+{% endblock %}
+
+

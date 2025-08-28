@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add New Task</h2>
+<form method="POST">
+    <div style="margin-bottom: 10px;">
+        <label>Title:</label><br>
+        <input type="text" name="title" required style="width: 300px;">
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label>Priority:</label><br>
+        <select name="priority" required style="width: 300px;">
+            <option value="">Select Priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label>Deadline:</label><br>
+        <input type="date" name="deadline" style="width: 300px;">
+    </div>
+    
+    <!-- ADD THIS MISSING FIELD -->
+    <div style="margin-bottom: 10px;">
+        <label>Status:</label><br>
+        <select name="status" required style="width: 300px;">
+            <option value="">Select Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+    </div>
+    
+    <input type="submit" value="Add Task" style="padding: 10px 20px;">
+</form>
+
+<div style="margin-top: 20px;">
+    <a href="{{ url_for('view_tasks') }}">Back to Tasks</a>
+</div>
+{% endblock %}
+

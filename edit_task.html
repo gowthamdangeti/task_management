@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit Task</h2>
+<form method="POST">
+    <div style="margin-bottom: 10px;">
+        <label>Title:</label><br>
+        <input type="text" name="title" value="{{ task[1] }}" required style="width: 300px;">
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label>Priority:</label><br>
+        <select name="priority" required style="width: 300px;">
+            <option value="{{ task[12] }}" selected>{{ task[12] }}</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label>Deadline:</label><br>
+        <input type="date" name="deadline" value="{{ task[3] }}" style="width: 300px;">
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label>Status:</label><br>
+        <select name="status" required style="width: 300px;">
+            <option value="{{ task[4] }}" selected>{{ task[13] }}</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+    </div>
+    
+    <input type="submit" value="Update Task" style="padding: 10px 20px;">
+</form>
+
+<div style="margin-top: 20px;">
+    <a href="{{ url_for('view_tasks') }}">Back to Tasks</a>
+</div>
+{% endblock %}
